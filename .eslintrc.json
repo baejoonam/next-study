@@ -4,9 +4,9 @@
 		// "indent": ["error", 2],
 		// "quotes": "error",
 		"semi": [2, "never"],
-		"comma-dangle": "error",
+		// "comma-dangle": "error",
 		"array-bracket-spacing": "error",
-		"object-curly-spacing": "error",
+		// "object-curly-spacing": "error",
 		"arrow-parens": "error"
 	}
 }
