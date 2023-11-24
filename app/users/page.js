@@ -1,19 +1,14 @@
+import { usersService } from '@/services/usersService'
+import Link from 'next/link'
+
 const Users = async () => {
-	const users = [
-		{
-			name: '홍길동',
-			age: 20,
-		},
-		{
-			name: '춘향이',
-			age: 16,
-		},
-	]
+	const users = await usersService.usersRead()
 	console.log(users)
 	return (
 		<div>
 			<h3>Users</h3>
 			<hr className='d-block' />
+			<Link href='/search'>Users</Link>
 			<div>
 				<h4>Read</h4>
 				<table>
