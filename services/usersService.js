@@ -16,8 +16,17 @@ export const usersService = {
 				body: JSON.stringify(user),
 			})
 			return res.json()
-		} catch (error) {
-			return []
-		}
+		} catch (error) {}
+	},
+	usersDelete: async index => {
+		try {
+			const res = await fetch(
+				'http://localhost:3000/api/users/' + index,
+				{
+					method: 'DELETE',
+				}
+			)
+			return res.json()
+		} catch (error) {}
 	},
 }

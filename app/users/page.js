@@ -1,6 +1,7 @@
 import { usersService } from '@/services/usersService'
 import Link from 'next/link'
 import Create from './create'
+import Delete from './delete'
 
 const Users = async () => {
 	const users = await usersService.usersRead()
@@ -27,7 +28,7 @@ const Users = async () => {
 								<td>{user.age}</td>
 								<td>
 									<button>Update</button>
-									<button>Delete</button>
+									<Delete index={index} />
 								</td>
 							</tr>
 						))}
