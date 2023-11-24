@@ -5,8 +5,8 @@
 		// "quotes": "error",
 		"semi": [2, "never"],
 		// "comma-dangle": "error",
-		"array-bracket-spacing": "error",
+		"array-bracket-spacing": "error"
 		// "object-curly-spacing": "error",
-		"arrow-parens": "error"
+		// "arrow-parens": "error"
 	}
 }

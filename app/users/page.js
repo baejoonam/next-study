@@ -1,5 +1,6 @@
 import { usersService } from '@/services/usersService'
 import Link from 'next/link'
+import Create from './create'
 
 const Users = async () => {
 	const users = await usersService.usersRead()
@@ -34,12 +35,7 @@ const Users = async () => {
 				</table>
 			</div>
 			<hr className='d-block' />
-			<div>
-				<h4>Create</h4>
-				<input type='text' placeholder='Name' />
-				<input type='text' placeholder='Age' />
-				<button>Create</button>
-			</div>
+			<Create />
 		</div>
 	)
 }

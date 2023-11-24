@@ -5,4 +5,11 @@ export const usersService = {
 		})
 		return res.json()
 	},
+	usersCreate: async user => {
+		const res = await fetch('http://localhost:3000/api/users', {
+			method: 'POST',
+			body: JSON.stringify(user),
+		})
+		return res.json()
+	},
 }

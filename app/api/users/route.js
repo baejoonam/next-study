@@ -16,3 +16,10 @@ if (!global.users) {
 export const GET = async () => {
 	return NextResponse.json(global.users)
 }
+
+export const POST = async request => {
+	global.users.push(await request.json())
+	return NextResponse.json({
+		result: 'Created',
+	})
+}
