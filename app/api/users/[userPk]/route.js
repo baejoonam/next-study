@@ -17,7 +17,17 @@ export const DELETE = async (_, context) => {
 }
 
 export const PATCH = async (request, context) => {
-	global.users[context.params.index] = await request.json()
+	const user = await request.json()
+	const mysql = await mysql2Pool()
+	const [rows] = await mysql.execute(
+		`
+		update users
+		set name = ?, age = ?
+		where user_pk = ?
+	`,
+		[user.name, user.age, context.params.userPk]
+	)
+	console.log(rows)
 	return NextResponse.json({
 		result: 'Updated',
 	})

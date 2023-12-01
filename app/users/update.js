@@ -5,15 +5,15 @@ import { usersService } from '@/services/usersService.js'
 import Delete from './delete.js'
 
 const Update = props => {
-	const { index } = props
+	const { userPk } = props
 	const router = useRouter()
 	const [user, setUser] = useState(props.user)
 	const usersUpdate = async () => {
-		await usersService.usersUpdate(index, user)
+		await usersService.usersUpdate(userPk, user)
 		router.refresh()
 	}
 	return (
-		<tr key={index}>
+		<tr key={userPk}>
 			<td>
 				<input
 					type='text'
