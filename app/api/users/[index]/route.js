@@ -6,3 +6,10 @@ export const DELETE = async (_, context) => {
 		result: 'Deleted',
 	})
 }
+
+export const PATCH = async (request, context) => {
+	global.users[context.params.index] = await request.json()
+	return NextResponse.json({
+		result: 'Updated',
+	})
+}

@@ -20,12 +20,18 @@ export const usersService = {
 	},
 	usersDelete: async index => {
 		try {
-			const res = await fetch(
-				'http://localhost:3000/api/users/' + index,
-				{
-					method: 'DELETE',
-				}
-			)
+			const res = await fetch('http://localhost:3000/api/users/' + index, {
+				method: 'DELETE',
+			})
+			return res.json()
+		} catch (error) {}
+	},
+	usersUpdate: async (index, user) => {
+		try {
+			const res = await fetch('http://localhost:3000/api/users/' + index, {
+				method: 'PATCH',
+				body: JSON.stringify(user),
+			})
 			return res.json()
 		} catch (error) {}
 	},

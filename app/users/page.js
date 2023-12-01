@@ -1,7 +1,7 @@
 import { usersService } from '@/services/usersService'
 import Link from 'next/link'
 import Create from './create'
-import Delete from './delete'
+import Update from './update'
 
 const Users = async () => {
 	const users = await usersService.usersRead()
@@ -23,14 +23,7 @@ const Users = async () => {
 					</thead>
 					<tbody>
 						{users.map((user, index) => (
-							<tr key={index}>
-								<td>{user.name}</td>
-								<td>{user.age}</td>
-								<td>
-									<button>Update</button>
-									<Delete index={index} />
-								</td>
-							</tr>
+							<Update key={index} index={index} user={user} />
 						))}
 					</tbody>
 				</table>
