@@ -27,7 +27,16 @@ export const GET = async () => {
 }
 
 export const POST = async request => {
-	global.users.push(await request.json())
+	const user = await request.json()
+	const mysql = await mysql2Pool()
+	const [rows] = await mysql.execute(
+		`
+		insert into users(name, age)
+		values (?, ?)
+	`,
+		[user.name, user.age]
+	)
+	console.log(rows)
 	return NextResponse.json({
 		result: 'Created',
 	})
