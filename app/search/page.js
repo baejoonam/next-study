@@ -1,4 +1,5 @@
 import { searchService } from '@/services/searchService.js'
+import SearchForm from './search-form'
 
 const Search = async request => {
 	const q = request.searchParams.q || ''
@@ -8,10 +9,7 @@ const Search = async request => {
 			<h3>Search</h3>
 			<hr className='d-block' />
 			<div>
-				<form>
-					<input type='text' placeholder='Search' />
-					<button>Search</button>
-				</form>
+				<SearchForm q={q} />
 			</div>
 			<hr className='d-block' />
 			<div>
