@@ -1,7 +1,16 @@
 import { NextResponse } from 'next/server'
+import mysql2Pool from '@/libraries/mysql2Pool'
 
 export const DELETE = async (_, context) => {
-	global.users.splice(context.params.index, 1)
+	const mysql = await mysql2Pool()
+	const [rows] = await mysql.execute(
+		`
+	  delete from users
+	  where user_pk = ?
+	`,
+		[context.params.userPk]
+	)
+	console.log(rows)
 	return NextResponse.json({
 		result: 'Deleted',
 	})

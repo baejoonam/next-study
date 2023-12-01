@@ -42,7 +42,7 @@ const Update = props => {
 			</td>
 			<td>
 				<button onClick={usersUpdate}>Update</button>
-				<Delete index={index} />
+				<Delete userPk={user.userPk} />
 			</td>
 		</tr>
 	)
