@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server'
+import mysql2Pool from '@/libraries/mysql2Pool'
 
 if (!global.users) {
 	global.users = [
@@ -14,7 +15,15 @@ if (!global.users) {
 }
 
 export const GET = async () => {
-	return NextResponse.json(global.users)
+	debugger
+	const mysql = await mysql2Pool()
+	const [rows] = await mysql.execute(`
+		select
+		user_pk as userPk, name, age
+		from users
+	`)
+	console.log(rows)
+	return NextResponse.json(rows)
 }
 
 export const POST = async request => {
