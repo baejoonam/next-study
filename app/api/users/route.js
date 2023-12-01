@@ -15,7 +15,6 @@ if (!global.users) {
 }
 
 export const GET = async () => {
-	debugger
 	const mysql = await mysql2Pool()
 	const [rows] = await mysql.execute(`
 		select

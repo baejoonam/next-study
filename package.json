@@ -4,8 +4,10 @@
 	"private": true,
 	"scripts": {
 		"dev": "next dev",
-		"build": "next build",
-		"start": "next start",
+		"build:dev": "env-cmd -f .env.development next build",
+		"start:dev": "env-cmd -f .env.development next start",
+		"build:prod": "env-cmd -f .env.prod next build",
+		"start:prod": "env-cmd -f .env.prod next start",
 		"lint": "next lint",
 		"fix": "next lint --fix",
 		"prepare": "husky install"
@@ -18,6 +20,7 @@
 	},
 	"devDependencies": {
 		"autoprefixer": "^10.0.1",
+		"env-cmd": "^10.1.0",
 		"eslint": "^8",
 		"eslint-config-next": "14.0.3",
 		"husky": "^8.0.3",

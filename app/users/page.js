@@ -22,8 +22,8 @@ const Users = async () => {
 						</tr>
 					</thead>
 					<tbody>
-						{users.map((user, index) => (
-							<Update key={index} userPk={user.userPk} user={user} />
+						{users.map(user => (
+							<Update key={user.userPk} userPk={user.userPk} user={user} />
 						))}
 					</tbody>
 				</table>
