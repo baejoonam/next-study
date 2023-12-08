@@ -36,7 +36,16 @@ export const POST = async request => {
 		[user.name, user.age]
 	)
 	console.log(rows)
-	return NextResponse.json({
-		result: 'Created',
+	// return NextResponse.json({
+	// 	result: 'Created',
+	// })
+	// cors 오류 해결
+	return new Response('Created', {
+		status: 200,
+		headers: {
+			'Access-Control-Allow-Origin': '*',
+			'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+			'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+		},
 	})
 }

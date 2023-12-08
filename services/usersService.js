@@ -21,7 +21,7 @@ export const usersService = {
 					body: JSON.stringify(user),
 				}
 			)
-			return res.json()
+			// return res.json()
 		} catch (error) {}
 	},
 	usersDelete: async userPk => {
