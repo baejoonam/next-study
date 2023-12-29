@@ -4,7 +4,7 @@ const nextConfig = {
 		return [
 			{
 				source: '/proxy/api/:path*',
-				destination: `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/:path*`,
+				destination: `${process.env.NEXT_PRIVATE_BACKEND_API_URL}/api/:path*`,
 			},
 		]
 	},

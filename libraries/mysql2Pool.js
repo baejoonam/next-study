@@ -9,9 +9,9 @@ const mysql2Pool = async () => {
 				password: '0000',
 				database: 'test',
 			})
-			const [rows, fields] = await connection.execute(`
-        select 'MySQL Connected' as Result
-      `)
+			const [rows, fields] = await connection.execute(
+				`select 'MySQL Connected' as Result`
+			)
 			console.log(rows)
 			global.mysql2Connection = connection
 		}
